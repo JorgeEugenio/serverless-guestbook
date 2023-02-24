@@ -8,10 +8,12 @@ const guestbook = {
   get() {
     const result = $.ajax({
       type: 'GET',
-      url: `https://us-south.functions.appdomain.cloud/api/v1/web/dbe9d0cc-3bc1-4969-89de-4db45507cb50/guestbook/read-guestbook-entries-sequence.json`,//`${apiUrl}/read-guestbook-entries-sequence.json`,
+      url: `${apiUrl}/read-guestbook-entries-sequence.json`,
       dataType: 'json'
     });
     console.log(result)
+    console.log(result.entries)
+    console.log(result.responseJSON)
     return result;
   },
   // add a single guestbood entry
