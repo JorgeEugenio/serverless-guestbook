@@ -52,7 +52,7 @@ const guestbook = {
       }
 
       const context = {
-        entries: result.entries
+        entries: result.rows
       }
       $('#entries').html(entriesTemplate(context));
     }).error(function(error) {
