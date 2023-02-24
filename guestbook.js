@@ -44,10 +44,7 @@ const guestbook = {
     $('#entries').html('Loading entries...');
     guestbook.get().done(function(result) {
       console.log('estamos a punto de imprimir result')
-      console.log(result)
-      console.log(result.entries)
-      console.log(result.rows)
-      if (!result.entries) {
+      if (!result.rows) {
         return;
       }
 
