@@ -6,11 +6,13 @@ console.log(apiUrl)
 const guestbook = {
   // retrieve the existing guestbook entries
   get() {
-    return $.ajax({
+    const result = $.ajax({
       type: 'GET',
       url: `https://us-south.functions.appdomain.cloud/api/v1/web/dbe9d0cc-3bc1-4969-89de-4db45507cb50/guestbook/read-guestbook-entries-sequence.json`,//`${apiUrl}/read-guestbook-entries-sequence.json`,
       dataType: 'json'
     });
+    console.log(result)
+    return result;
   },
   // add a single guestbood entry
   add(name, email, comment) {
