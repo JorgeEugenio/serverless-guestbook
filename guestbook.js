@@ -33,6 +33,7 @@ const guestbook = {
 (function() {
 
   let entriesTemplate;
+  let extras = []
 
   function prepareTemplates() {
     entriesTemplate = Handlebars.compile($('#entries-template').html());
@@ -44,12 +45,19 @@ const guestbook = {
     $('#entries').html('Loading entries...');
     guestbook.get().done(function(result) {
       console.log('estamos a punto de imprimir result')
+      extras = result.rows.map(row => {
+        return {
+          comment: row.doc.comment,
+          email: row.doc.email,
+          name: row.doc.name
+        }
+      })
       if (!result.rows) {
         return;
       }
 
       const context = {
-        entries: result.rows
+        entries: extras//result.entries
       }
       $('#entries').html(entriesTemplate(context));
     }).error(function(error) {
