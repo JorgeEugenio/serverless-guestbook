@@ -11,10 +11,6 @@ const guestbook = {
       url: `${apiUrl}/read-guestbook-entries-sequence.json`,
       dataType: 'json'
     });
-    console.log(result)
-    console.log(result.entries)
-    console.log(result.responseJSON)
-    console.log(result.rows)
     return result;
   },
   // add a single guestbood entry
@@ -49,6 +45,7 @@ const guestbook = {
     guestbook.get().done(function(result) {
       console.log('estamos a punto de imprimir result')
       console.log(result)
+      console.log(result.entries)
       if (!result.entries) {
         return;
       }
