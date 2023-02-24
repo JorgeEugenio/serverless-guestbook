@@ -46,6 +46,7 @@ const guestbook = {
       console.log('estamos a punto de imprimir result')
       console.log(result)
       console.log(result.entries)
+      console.log(result.rows)
       if (!result.entries) {
         return;
       }
