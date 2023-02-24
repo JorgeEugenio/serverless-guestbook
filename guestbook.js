@@ -14,6 +14,7 @@ const guestbook = {
     console.log(result)
     console.log(result.entries)
     console.log(result.responseJSON)
+    console.log(result.rows)
     return result;
   },
   // add a single guestbood entry
