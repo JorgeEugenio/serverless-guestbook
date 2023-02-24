@@ -8,7 +8,7 @@ const guestbook = {
   get() {
     return $.ajax({
       type: 'GET',
-      url: `${apiUrl}/read-guestbook-entries-sequence.json`,
+      url: `https://us-south.functions.appdomain.cloud/api/v1/web/dbe9d0cc-3bc1-4969-89de-4db45507cb50/guestbook/read-guestbook-entries-sequence.json`,//`${apiUrl}/read-guestbook-entries-sequence.json`,
       dataType: 'json'
     });
   },
